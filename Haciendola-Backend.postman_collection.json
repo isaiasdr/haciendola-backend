@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "d1a49e2b-df51-439f-a53e-2c8d73835bb3",
+		"name": "Haciendola-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20635264"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"John3\",\n    \"lastname\": \"Doe\",\n    \"email\": \"test1@gmail.com\",\n    \"password\": \"Test1234&\",\n    \"confirmPassword\": \"Test1234&\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test1@gmail.com\",\n    \"password\": \"Test1234&\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify-Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiaXNhaWFzIiwibGFzdG5hbWUiOiJkb21pbmd1ZXoiLCJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcxNTU2OTAwNCwiZXhwIjoxNzE1NTc2MjA0fQ.15R-Gf162jxq1roG2LuCJQgJz7dh_5WRSzAdF8PWPZI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/auth/verify-token",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verify-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"isaiasdr12@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/auth/forgot-password",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTgsImZpcnN0bmFtZSI6IkpvaG4iLCJsYXN0bmFtZSI6IkRvZSIsImVtYWlsIjoidGVzdDFAZ21haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNC0wNS0xNFQyMToyNjozNy43NTlaIiwidXBkYXRlZEF0IjoiMjAyNC0wNS0xNFQyMToyNjozNy43NTlaIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzE1NzI1MjgyLCJleHAiOjE3MTU3MzI0ODJ9.CDgtxhxTNVHPUQozoxDjNWVmcQOA0n6mcUatmQUNIX8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"Test1235&\",\n    \"confirmPassword\": \"Test1235&\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/auth/change-password",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "FindBySKU",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZmlyc3RuYW1lIjoiaXNhaWFzIiwibGFzdG5hbWUiOiJkb21pbmd1ZXoiLCJlbWFpbCI6InRlc3QxQHRlc3QuY29tIiwiY3JlYXRlZEF0IjoiMjAyNC0wNS0xM1QyMDowMDowNS45MzBaIiwidXBkYXRlZEF0IjoiMjAyNC0wNS0xM1QyMDowMDowNS45MzBaIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3MTU2MzA0MDUsImV4cCI6MTcxNTYzNzYwNX0.ficVNnOFk2JOsLCf8HZGxdV6i77nNwz9WL-q5YiJeOU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/products/60870131001",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"60870131001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZmlyc3RuYW1lIjoiaXNhaWFzIiwibGFzdG5hbWUiOiJkb21pbmd1ZXoiLCJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTEzVDE4OjE4OjUzLjc1NFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTEzVDE4OjE4OjUzLjc1NFoiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTU2MzA1OTQsImV4cCI6MTcxNTYzNzc5NH0.pdfnQAm5sPVme0ewAt8bSz_Brul8hgA1G7_xo4GfgYo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"handle\": \"   cola-glitter-23-grs   \",\n    \"title\": \"cola glitter 23 grs\",\n    \"description\": \"<p><strong>Características:</strong></p><ul><li>Para hacer pegaduras, contornos, decorar y pintar sobre papel, papel cartón y cartulina.</li><li>Posee un brillo intenso con glitter.</li><li>Lavable (no mancha las ropas).</li></ul>\",\n    \"sku\": \"60870131001\",\n    \"grams\": \"100.20\",\n    \"stock\": 1013,\n    \"price\": \"1161.55\",\n    \"comparePrice\": \"1290.51\",\n    \"barcode\": \"7891153003689\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/products/60870131001",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"60870131001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZmlyc3RuYW1lIjoiaXNhaWFzIiwibGFzdG5hbWUiOiJkb21pbmd1ZXoiLCJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTEzVDE4OjE4OjUzLjc1NFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTEzVDE4OjE4OjUzLjc1NFoiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTU2MzA1OTQsImV4cCI6MTcxNTYzNzc5NH0.pdfnQAm5sPVme0ewAt8bSz_Brul8hgA1G7_xo4GfgYo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"handle\": \"   cola-glitter-25-grs   \",\n    \"grams\": \"1020.20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/products/60870131001",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"60870131001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZmlyc3RuYW1lIjoiaXNhaWFzIiwibGFzdG5hbWUiOiJkb21pbmd1ZXoiLCJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTEzVDE4OjE4OjUzLjc1NFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTEzVDE4OjE4OjUzLjc1NFoiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTU2MzA1OTQsImV4cCI6MTcxNTYzNzc5NH0.pdfnQAm5sPVme0ewAt8bSz_Brul8hgA1G7_xo4GfgYo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/products?limit=10&page=1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seed",
+			"item": [
+				{
+					"name": "Seed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/seed",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"seed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
