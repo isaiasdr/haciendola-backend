@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Post } from '@nestjs/common';
 import { User } from '@prisma/client';
 
 import { AuthService } from './auth.service';
@@ -24,11 +24,12 @@ export class AuthController {
     return this.authService.registerUser(registerUserDto);
   }
 
-  @ApiResponse({ status: 201, description: 'user was logged' })
+  @ApiResponse({ status: 200, description: 'user was logged' })
   @ApiResponse({ status: 400, description: 'Bad Request' })
   @ApiResponse({ status: 500, description: 'Internal server error' })
   @ApiBody({ type: [LoginUserDto] })
   @Post('login')
+  @HttpCode(200)
   loginUser(@Body() loginUserDto: LoginUserDto) {
     return this.authService.loginUser(loginUserDto);
   }
